@@ -46,7 +46,7 @@ class FeaturesUtils(nn.Module):
         super().__init__()
 
         if enable_conditions:
-            self.clip_model = create_model_from_pretrained('ViT-H-14', pretrained='dfn5b', return_transform=False)
+            self.clip_model = create_model_from_pretrained('hf-hub:ameno-tech/DFN5B-CLIP-ViT-H-14', return_transform=False)
             self.clip_preprocess = Normalize(mean=[0.48145466, 0.4578275, 0.40821073],
                                              std=[0.26862954, 0.26130258, 0.27577711])
             self.clip_model = patch_clip(self.clip_model)
